@@ -3,25 +3,31 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 // Components
-import Login from './components/Login';
 import Navigation from './components/Navigation';
+import Store from './components/Store';
+import Management from './components/Management';
+import Login from './components/Login';
 
-// Bootstrap styles
-import Jumbotron from 'react-bootstrap/Jumbotron';
-import Container from 'react-bootstrap/Container';
+// React router
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 
 function App() {
   return (
-    <div className="App">
-      <Navigation/>
-      <Jumbotron>
-        <Container>
-          <h1>Customer Database</h1>
-        </Container>
-      </Jumbotron>
-      <Login/>
-    </div>
+    <Router>
+      <div className="App">
+        {/* Navigation component should show all the time */}
+        <Navigation/>
+        <Switch>
+          {/* 
+            components will show depending onthe route
+          */}
+          <Route path="/" exact component={Login} />
+          <Route path="/store" component={Store} />
+          <Route path="/management" component={Management} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
