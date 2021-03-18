@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+// Stylesheets
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+
+// Components
+import Login from './components/Login';
+import Navigation from './components/Navigation';
+
+// Bootstrap styles
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Container from 'react-bootstrap/Container';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navigation/>
+      <Jumbotron>
+        <Container>
+          <h1>Customer Database</h1>
+        </Container>
+      </Jumbotron>
+      <Login/>
     </div>
   );
 }
