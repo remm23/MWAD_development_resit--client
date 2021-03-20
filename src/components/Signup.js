@@ -6,14 +6,14 @@ import MyForm from './MyForm';
 import { Container, Row, Col } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 
-const Login = () => {
+const Signup = () => {
 
 	return (
 		<Container className="login-container">
 			<Row>
 				<Col></Col>
 				<Col xs={5}>
-					<Form action='http://localhost:4000/login' method='POST'>
+					<Form action='http://localhost:4000/signup' method='POST'>
 						<MyForm/>
 					</Form>
 				</Col>
@@ -24,4 +24,4 @@ const Login = () => {
 	);
 }
 
-export default Login;
+export default Signup;

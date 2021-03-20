@@ -10,7 +10,6 @@ const Customer = (props) => {
 			<td>{props.company}</td>
 			<td>{props.address}</td>
 			<td>{props.postcode}</td>
-			
 		</tr>
 	)
 }
