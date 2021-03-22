@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MyForm from './MyForm';
+import FormSignup from './FormSignup';
 
 // react-bootstrap
 import { Container, Row, Col } from 'react-bootstrap';
@@ -14,7 +14,7 @@ const Signup = () => {
 				<Col></Col>
 				<Col xs={5}>
 					<Form action='http://localhost:4000/signup' method='POST'>
-						<MyForm/>
+						<FormSignup/>
 					</Form>
 				</Col>
 				<Col></Col>

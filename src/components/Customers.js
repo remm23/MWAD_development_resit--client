@@ -1,13 +1,42 @@
-import React from 'react';
-
-import Table from 'react-bootstrap/Table';
+import React, { useState } from 'react';
 import Customer from './Customer';
 
-import fakeCustomers from '../fakeData/fakeCustomers';
+import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
+import { Container, Row, Col } from 'react-bootstrap';
+
+// import fakeCustomers from '../fakeData/fakeCustomers';
+
+// axios for get requests
+import axios from 'axios';
+
 
 const Customers = () => {
+
+	const [data, setData] = useState([]);
+
+	
+	
+	const getCustomerData = () => {		
+		axios.get('http://localhost:4000/customers')
+		.then(res => 
+			setData(res.data)
+		);
+		console.log(data);
+	}
+
+
 	return(
 		<div>
+			<Container>
+				<Row>
+					<Col>
+						<Button onClick={getCustomerData}>Update table</Button>
+					</Col>
+					<Col></Col>
+					<Col></Col>
+				</Row>
+			</Container>
 			<Table striped bordered hover>
 				<thead>
 					<tr>
@@ -22,7 +51,7 @@ const Customers = () => {
 				</thead>
 				{/* Data should be rendered via props */}
 				<tbody>
-					{fakeCustomers.map(customer => 
+					{data.map(customer => 
 						<Customer
 						key={customer.id}
 						id={customer.id}
