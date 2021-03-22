@@ -14,8 +14,6 @@ import axios from 'axios';
 const Customers = () => {
 
 	const [data, setData] = useState([]);
-
-	
 	
 	const getCustomerData = () => {		
 		axios.get('http://localhost:4000/customers')
@@ -25,12 +23,12 @@ const Customers = () => {
 		console.log(data);
 	}
 
-
 	return(
 		<div>
-			<Container>
+			<Container className='management-container'>
 				<Row>
 					<Col>
+						{/* Update the table of customer data*/}
 						<Button onClick={getCustomerData}>Update table</Button>
 					</Col>
 					<Col></Col>
@@ -51,6 +49,7 @@ const Customers = () => {
 				</thead>
 				{/* Data should be rendered via props */}
 				<tbody>
+					{/* map through data array to display customer info */}
 					{data.map(customer => 
 						<Customer
 						key={customer.id}

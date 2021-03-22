@@ -10,20 +10,14 @@ import Management from './components/Management';
 import Login from './components/Login';
 import Signup from './components/Signup';
 
+import { Jumbotron } from 'react-bootstrap';
+
 // React router
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-
 function App() {
 
-  // const currentPath = window.location.pathname;
-	// const [title,setTitle] = useState('hello');
-  // const handleSetTitle = () => {
-  //   if (currentPath === "signup") { setTitle("Signup") }
-  // }
-  // // else {setTitle('hi')}
-  // useEffect(() => handleSetTitle)
-
+  // Hook for setting the title
   const [title, setTitle] = useState('');
 	
 	// effect to change title base on page
@@ -55,6 +49,7 @@ function App() {
           <Route path="/store" component={Store} />
           <Route path="/management" component={Management} />
         </Switch>
+        <Jumbotron className='footer'></Jumbotron>
       </div>
     </Router>
   );

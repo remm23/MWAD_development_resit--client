@@ -1,9 +1,9 @@
 import React from 'react';
 
-
 // react-bootstrap 
 import { Container, Row, Col } from 'react-bootstrap';
 
+// Components
 import Customers from './Customers';
 
 const Management = () => {

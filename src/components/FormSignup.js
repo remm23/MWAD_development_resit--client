@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 
 const FormSignup = () => {
 
+	// Sign up form for customers
 	return (
 	<>
 		<Form.Group>
